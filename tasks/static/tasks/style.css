@@ -1,0 +1,38 @@
+/*Estilo general del cuerpo */
+body {
+    background-color:beige;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+/* Estilo de los títulos */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Estilo de tabla */
+/* Tabla General */
+table {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+/* Encabezados */
+th {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: bold;
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+/* Celdas de Datos */
+td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    color: #212529;
+}
