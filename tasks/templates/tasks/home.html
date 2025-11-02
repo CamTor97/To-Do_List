@@ -1,33 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List (Home)</title>
-</head>
-<body>
-    <h1>Mi Lista de Tareas</h1>
-    <table>
-        <thead>
-            <th>Nombre</th>
-            <th>Estado</th>
-        </thead>
-        <tbody>
-            {% for task in tasks%}
-            <tr>
-                <td>{{task.title}}</td>
-                <td>{% if task.completed == True %}
-                    <span style="color:green">✅</span>
-                {% else %}
-                    <span style="color:orange">⏳</span>
-                {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-        
-    </table>
-</body>
-</html>
+{% extends "base.html"%}
+{% block content %}
+<h1>To-Do List App</h1>
+<a href="{% url 'task-list' %}">Your Tasks</a>
+{% endblock %}

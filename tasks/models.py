@@ -6,6 +6,7 @@ class Task(models.Model):
     name = models.CharField(max_length=100, verbose_name="Name")
     due_date = models.DateField(default=date.today, verbose_name="Due Date")
     is_completed = models.BooleanField(default=False, verbose_name="Completed")
+    details = models.URLField(blank=True, verbose_name="Details")
 
     def __str__(self):
         return self.name
