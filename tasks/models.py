@@ -45,6 +45,8 @@ class Task(models.Model):
         choices=TASK_STATE_CHOICES,
         default= NOT_STARTED,
     )
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, blank=True, null=True, related_name="project_tasks")
 
     def __str__(self):
         return self.name
+    
