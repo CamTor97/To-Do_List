@@ -16,10 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from tasks import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('tasks/', views.TaskListView.as_view(), name='task-list')
+    path('', auth_views.LoginView.as_view(template_name="tasks/home.html"), name='home'),
+    path("dashboard/", views.DashboardView.as_view(), name="dashboard"),
+    # Project model URL's
+    path("projects/", views.ProjectListView.as_view(), name="projects"),
+    path("projects/create/", views.ProjectCreationView.as_view(), name="projects-create"),
+    path("projects/<int:pk>/", views.ProjectDetailView.as_view(), name="projects-detail"),
+    path("projects/<int:pk>/update/", views.ProjectUpdateView.as_view(), name="projects-update"),
+    path("projects/<int:pk>/delete/", views.ProjectDeleteView.as_view(), name="projects-delete"), 
+    # Task model URL's 
+    path("tasks/", views.TaskListView.as_view(), name='tasks-list'),
+    path("tasks/create/", views.TaskCreationView.as_view(), name="tasks-create"),
+    path("tasks/<int:pk>/", views.TaskDetailView.as_view(), name="tasks-detail"),
+    path("tasks/<int:pk>/update/", views.TaskUpdateView.as_view(), name="tasks-update"),
+    path("tasks/<int:pk>/delete/", views.TaksDeleteView.as_view(), name="tasks-delete"),
 ]

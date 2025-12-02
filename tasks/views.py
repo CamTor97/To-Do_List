@@ -6,6 +6,9 @@ from .models import (Task, Project)
 def home(request):
     return render(request, "")
 
+class DashboardView(TemplateView):
+    template_name = "tasks/dashboard.html"
+
 # Creating views for Project model
 class ProjectListView(ListView):
     model = Project
