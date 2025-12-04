@@ -4,6 +4,7 @@ from datetime import date
 # Create your models here.
 class Project(models.Model):
     name = models.CharField(max_length=100, verbose_name="Name")
+    description = models.TextField(blank=True)
     start_date = models.DateField(default=date.today, verbose_name="Start Date")
     end_date = models.DateField(blank=True, verbose_name="End Date")
     NOT_STARTED = "NS" 
@@ -28,6 +29,7 @@ class Project(models.Model):
 
 class Task(models.Model):
     name = models.CharField(max_length=100, verbose_name="Name")
+    description = models.TextField(blank=True)
     start_date = models.DateField(default=date.today, verbose_name="Start Date")
     due_date = models.DateField(verbose_name="Due Date")
     NOT_STARTED = "NS" 
