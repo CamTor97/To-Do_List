@@ -30,7 +30,7 @@ urlpatterns = [
     path("projects/<int:pk>/update/", views.ProjectUpdateView.as_view(), name="projects-update"),
     path("projects/<int:pk>/delete/", views.ProjectDeleteView.as_view(), name="projects-delete"), 
     # Task model URL's 
-    path("tasks/", views.TaskListView.as_view(), name='tasks-list'),
+    path("tasks/", views.TaskListView.as_view(), name='tasks'),
     path("tasks/create/", views.TaskCreationView.as_view(), name="tasks-create"),
     path("tasks/<int:pk>/", views.TaskDetailView.as_view(), name="tasks-detail"),
     path("tasks/<int:pk>/update/", views.TaskUpdateView.as_view(), name="tasks-update"),
